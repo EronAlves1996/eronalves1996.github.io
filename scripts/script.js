@@ -10,36 +10,83 @@ const buttons = document.querySelectorAll(".button");
 */
 
 function loadMainPage (){
+   let headerMainPage, headerMainPageContent, p1, p2, p3, p4;
+
    changeDiv.innerHTML = "";
 
    // Definindo o Título da página principal
 
-   let headerMainPage = document.createElement("h3");
-   let headerMainPageContent = document.createTextNode("Bem vindo!");
+   headerMainPage = document.createElement("h3");
+   headerMainPageContent = document.createTextNode("Bem vindo!");
    headerMainPage.appendChild(headerMainPageContent);
 
    //Definindo o conteúdo
    
-   let paragraph = document.createElement("p");
-   paragraph.appendChild(document.createTextNode("Quer criar seu site personalizado?"));
-   paragraph.appendChild(document.createElement("br"));
-   paragraph.appendChild(document.createTextNode("Fale Comigo!"));
+   p1 = document.createElement("p");
+   p1.appendChild(document.createTextNode("Quer criar seu site personalizado?"));
+   p1.appendChild(document.createElement("br"));
+   p1.appendChild(document.createTextNode("Fale Comigo!"));
 
-   changeDiv.appendChild(headerMainPage)
-   changeDiv.appendChild(paragraph);
+   p2 = document.createElement("p");
+   p2.appendChild(document.createTextNode("Aprendiz em Desenvolvimento com foco em tecnologias Backend e Node.JS"));
+   p2.appendChild(document.createElement("br"));
+   p2.appendChild(document.createTextNode("Formado inicialmente em administração, com grande experiências nas áreas financeira e de administração condominial"));
+   p2.appendChild(document.createElement("br"));
 
+   p3 = document.createElement("p");
+   p3.appendChild(document.createTextNode(`"Recentemente redescobri minha paixão em programação e espero aprender o máximo disso para criar
+   aplicações funcionais e que entreguem valor ao meu cliente"`));
+   p3.style.fontStyle = "italic";
+
+   p4 = document.createElement("p");
+   p4.appendChild(document.createTextNode("Veja alguns dos meus projetos clicando na aba projetos acima!!"));
+
+   changeDiv.append(headerMainPage, p1, p2, p3, p4);
+   
 }
 
 function loadProjectsPage (){
-   
+   function projectCell(name, img, descr, page, source){
+      this.name = name;
+      this.img = img;
+      this.descr = descr;
+      this.page = page;
+      this.source = source;
+   }
+
+   let tikTakToe = new projectCell("Jogo da Velha", "images/tikTakToe.png","Projeto de Jogo da Velha feito inteiramente em C, basta abrir a página e clicar em PLAY", "https://onlinegdb.com/7hQFBUJ0S","https://github.com/TTTecnology/Jogo-da-Velha")
+
    changeDiv.innerHTML = " ";
 
    //Definindo o Título
    let h3El = document.createElement("h3");
    h3El.appendChild(document.createTextNode("Projetos"));
+   const projectArray = [ tikTakToe ]
+   const pageArray = [];
+   let intermediateArray = [];
 
-   changeDiv.appendChild(h3El);
+   
+   let projectArrayLength = projectArray.length;
+   let projectsDiv = document.createElement("div");
+   for(let i = 0; i < projectArrayLength; i++){
+      intermediateArray = [];
+      intermediateArray.push(document.createElement("h4").appendChild(document.createTextNode(projectArray[i].name)));
+      intermediateArray.push(document.createElement("img"));
+      intermediateArray[1].src = projectArray[i].img;
+      intermediateArray.push(document.createElement("p").appendChild(document.createTextNode(projectArray[i].descr)));
+      intermediateArray.push(document.createElement("a"));
+      intermediateArray[3].href = projectArray[i].page;
+      intermediateArray[3].appendChild(document.createTextNode("Ir para Página"));
+      intermediateArray.push(document.createElement("a"));
+      intermediateArray[4].href = projectArray[i].source;
+      intermediateArray[4].appendChild(document.createTextNode("Ir para o código"));
 
+      pageArray.push(intermediateArray);
+   }
+   for(let i = 0; i<pageArray.length;i++){
+      projectsDiv.append(pageArray[i][0], pageArray[i][1], pageArray[i][2], pageArray[i][3], pageArray[i][4]);
+   }
+   changeDiv.append(h3El, projectsDiv);   
 }
 
 function loadBlogPage (){
@@ -84,4 +131,3 @@ buttons[0].addEventListener("click", loadMainPage);
 buttons[1].addEventListener("click", loadProjectsPage);
 buttons[2].addEventListener("click", loadBlogPage);
 buttons[3].addEventListener("click", loadContactsPage);
-
