@@ -4,8 +4,9 @@ const buttons = document.querySelectorAll(".button");
 
 /* índice do array de buttons:
 [0] = Página Principal
-[1] = Anúncios
-[2] = Notícias
+[1] = Projetos
+[2] = Blog
+[3] = Contatos
 */
 
 function loadMainPage (){
@@ -29,29 +30,43 @@ function loadMainPage (){
 
 }
 
-function loadAdsPage (){
+function loadProjectsPage (){
    
    changeDiv.innerHTML = " ";
 
    //Definindo o Título
-   let h3AdsPage = document.createElement("h3");
-   h3AdsPage.appendChild(document.createTextNode("Anúncios"));
+   let h3El = document.createElement("h3");
+   h3El.appendChild(document.createTextNode("Projetos"));
 
-   changeDiv.appendChild(h3AdsPage);
+   changeDiv.appendChild(h3El);
 
 }
 
-function loadNewsPage (){
+function loadBlogPage (){
    
    changeDiv.innerHTML = " ";
 
    //Definindo o Título
-   let h3AdsPage = document.createElement("h3");
-   h3AdsPage.appendChild(document.createTextNode("Notícias"));
+   let h3El = document.createElement("h3");
+   h3El.appendChild(document.createTextNode("Sobre o Meu Blog"));
 
-   changeDiv.appendChild(h3AdsPage);
+   changeDiv.appendChild(h3El);
 
 }
+
+function loadContactsPage (){
+   
+   changeDiv.innerHTML = " ";
+
+   //Definindo o Título
+   let h3El = document.createElement("h3");
+   h3El.appendChild(document.createTextNode("Contatos"));
+
+   changeDiv.appendChild(h3El);
+
+}
+
+
 
 for(let i = 0; i<buttons.length; i++){
    buttons[i].addEventListener("click", ()=>{
@@ -66,5 +81,7 @@ for(let i = 0; i<buttons.length; i++){
 
 addEventListener("load", loadMainPage);
 buttons[0].addEventListener("click", loadMainPage);
-buttons[1].addEventListener("click", loadAdsPage);
-buttons[2].addEventListener("click", loadNewsPage);
+buttons[1].addEventListener("click", loadProjectsPage);
+buttons[2].addEventListener("click", loadBlogPage);
+buttons[3].addEventListener("click", loadContactsPage);
+
