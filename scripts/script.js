@@ -54,14 +54,17 @@ function loadProjectsPage (){
       this.source = source;
    }
 
-   let tikTakToe = new projectCell("Jogo da Velha", "images/tikTakToe.png","Projeto de Jogo da Velha feito inteiramente em C, basta abrir a página e clicar em PLAY", "https://onlinegdb.com/7hQFBUJ0S","https://github.com/TTTecnology/Jogo-da-Velha")
-
    changeDiv.innerHTML = " ";
 
    //Definindo o Título
    let h3El = document.createElement("h3");
    h3El.appendChild(document.createTextNode("Projetos"));
-   const projectArray = [ tikTakToe ]
+   const projectArray = [ 
+      new projectCell("Jogo da Velha", "images/tikTakToe.png","Projeto de Jogo da Velha feito inteiramente em C, basta abrir a página e clicar em PLAY", "https://onlinegdb.com/7hQFBUJ0S","https://github.com/TTTecnology/Jogo-da-Velha"),
+     // new projectCell("Relógio Digital", , , ,),
+     // new projectCell("Gerador de Senhas", , , , )
+   ]
+
    const pageArray = [];
    let intermediateArray = [];
 
