@@ -1,0 +1,42 @@
+@font-face{
+    font-family:'digital-clock-font';
+     src: url('digital-7.ttf');
+}
+body{
+   background-color: #081c15;
+   color: #95d5b2;
+}
+#clock{
+   border: 10px double #95d5b2;
+   display: inline-block;
+   font-family: digital-clock-font;
+   font-size: 120px;
+   width: 570px;
+   text-align:center;
+}
+#date{
+   font-size: 30px;
+   margin-bottom: 10px;
+}
+#contentDisplay{
+   margin: 0;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%,-50%);
+   transform: translate(-50%,-50%);
+   text-align:center;
+}
+p{
+   display:inline-block;
+   margin: 5px;
+   width: 150px;
+   text-align: center;
+   text-shadow: 1px 2px 17px #b7e4c7;
+}
+
+.dots{
+   width: 30px;
+}
+
+

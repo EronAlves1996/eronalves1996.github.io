@@ -62,8 +62,8 @@ function loadProjectsPage (){
    h3El.appendChild(document.createTextNode("Projetos"));
    const projectArray = [ 
       new projectCell("Jogo da Velha", "images/tikTakToe.png","Projeto de Jogo da Velha feito inteiramente em C, basta abrir a página e clicar em PLAY", "https://onlinegdb.com/7hQFBUJ0S","https://github.com/TTTecnology/Jogo-da-Velha"),
-     // new projectCell("Relógio Digital", , , ,),
-     // new projectCell("Gerador de Senhas", , , , )
+      new projectCell("Relógio Digital", "images/digitalClock.png","Relógio Digital moderno, imita a aparência de um rádio-relógio", "projects/digitalClock/index.html","https://github.com/TTTecnology/Digital-Clock"),
+      new projectCell("Gerador de Senhas", "images/geraSenha.png","Gerador de senhas totalmente aleatório, baseado em charcodes e arrays" , "projects/geraSenha/index.html","https://github.com/TTTecnology/Password-Generator")
    ]
 
    const pageArray = [];
@@ -99,9 +99,20 @@ function loadBlogPage (){
 
    //Definindo o Título
    let h3El = document.createElement("h3");
-   h3El.appendChild(document.createTextNode("Sobre o Meu Blog"));
+   h3El.appendChild(document.createTextNode("Sobre o Meu Blog"))
 
-   changeDiv.append(h3El);
+   let p1 = document.createElement("p");
+   p1.appendChild(document.createTextNode(`Meu blog está hospedado na plataforma dev.to, onde 
+   quase todas as semanas posto novos artigos por lá, principalmente na área da ciência da
+   computação.`));
+
+   let p2 = document.createElement("p");
+   let a1 = document.createElement("a");
+   a1.href = "https://dev.to/tttecnology";
+   a1.appendChild(document.createTextNode("Confira clicando aqui!"));
+   p2.appendChild(a1);
+
+   changeDiv.append(h3El, p1, p2);
 
 }
 
@@ -113,7 +124,35 @@ function loadContactsPage (){
    let h3El = document.createElement("h3");
    h3El.appendChild(document.createTextNode("Contatos"));
 
-   changeDiv.appendChild(h3El);
+   let p1 = document.createElement("p");
+   p1.appendChild(document.createTextNode("Confira os meus contatos"));
+
+   let pwpp = document.createElement("p");
+   let awpp = document.createElement("a");
+   awpp.href="https://wa.me/5531971732015";
+   awpp.appendChild(document.createTextNode("Converse comigo no Whatsapp!"));
+   pwpp.appendChild(awpp);
+
+   let pLkdn = document.createElement("p");
+   let aLkdn = document.createElement("a");
+   aLkdn.appendChild(document.createTextNode("Conheça meu LinkedIn!"));
+   aLkdn.href="https://www.linkedin.com/in/eron-alves-343684107/";
+   pLkdn.appendChild(aLkdn);
+
+   let pGitHub = document.createElement("p");
+   let aGithub = document.createElement("a");
+   aGithub.href="https://github.com/TTTecnology";
+   aGithub.appendChild(document.createTextNode("Conheça meus repositórios no GitHub"));
+   pGitHub.appendChild(aGithub);
+
+   let pEmail = document.createElement("p");
+   let aEmail = document.createElement("a");
+   aEmail.href="mailto:eron.alves@rocketmail.com";
+   aEmail.appendChild(document.createTextNode("Me mande um e-mail"));
+   pEmail.appendChild(aEmail);
+
+
+   changeDiv.append(h3El,pwpp, pLkdn, pGitHub, pEmail);
 
 }
 
@@ -130,8 +169,7 @@ for(let i = 0; i<buttons.length; i++){
    })
 }
 
-addEventListener("load", loadProjectsPage);
-//addEventListener("load", loadMainPage);
+addEventListener("load", loadMainPage);
 
 buttons[0].addEventListener("click", loadMainPage);
 buttons[1].addEventListener("click", loadProjectsPage);
