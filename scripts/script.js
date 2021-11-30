@@ -54,6 +54,7 @@ function loadProjectsPage (){
       this.source = source;
    }
 
+
    changeDiv.innerHTML = " ";
 
    //Definindo o Título
@@ -66,16 +67,14 @@ function loadProjectsPage (){
    ]
 
    const pageArray = [];
-   let intermediateArray = [];
-
-   
+      
    let projectArrayLength = projectArray.length;
    let projectsDiv = document.createElement("div");
    for(let i = 0; i < projectArrayLength; i++){
-      intermediateArray = [];
-      intermediateArray.push(document.createElement("h4").appendChild(document.createTextNode(projectArray[i].name)));
+      let intermediateArray = [];
       intermediateArray.push(document.createElement("img"));
-      intermediateArray[1].src = projectArray[i].img;
+      intermediateArray[0].src=projectArray[i].img;
+      intermediateArray.push(document.createElement("h4").appendChild(document.createTextNode(projectArray[i].name)));
       intermediateArray.push(document.createElement("p").appendChild(document.createTextNode(projectArray[i].descr)));
       intermediateArray.push(document.createElement("a"));
       intermediateArray[3].href = projectArray[i].page;
@@ -87,7 +86,9 @@ function loadProjectsPage (){
       pageArray.push(intermediateArray);
    }
    for(let i = 0; i<pageArray.length;i++){
-      projectsDiv.append(pageArray[i][0], pageArray[i][1], pageArray[i][2], pageArray[i][3], pageArray[i][4]);
+      let cellDiv = document.createElement("div");
+      cellDiv.append(pageArray[i][0], pageArray[i][1], pageArray[i][2], pageArray[i][3], pageArray[i][4]);
+      projectsDiv.append(cellDiv);
    }
    changeDiv.append(h3El, projectsDiv);   
 }
@@ -100,7 +101,7 @@ function loadBlogPage (){
    let h3El = document.createElement("h3");
    h3El.appendChild(document.createTextNode("Sobre o Meu Blog"));
 
-   changeDiv.appendChild(h3El);
+   changeDiv.append(h3El);
 
 }
 
@@ -129,7 +130,9 @@ for(let i = 0; i<buttons.length; i++){
    })
 }
 
-addEventListener("load", loadMainPage);
+addEventListener("load", loadProjectsPage);
+//addEventListener("load", loadMainPage);
+
 buttons[0].addEventListener("click", loadMainPage);
 buttons[1].addEventListener("click", loadProjectsPage);
 buttons[2].addEventListener("click", loadBlogPage);
