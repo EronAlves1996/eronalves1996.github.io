@@ -77,7 +77,7 @@ function loadMainPage (){
             this.img = img;
          }
 
-         let projectArray = [new projects("jogo da velha", "images/tiktaktoe.png"),
+         let projectArray = [new projects("Jogo da velha", "images/tikTakToe.png"),
             new projects("Relógio Digital", "images/digitalClock.png"),
             new projects("Gerador de Senhas", "images/geraSenha.png")
          ];
