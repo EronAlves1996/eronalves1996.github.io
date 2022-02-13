@@ -92,7 +92,7 @@ function loadMainPage (){
             projTitle.remove();
             projTitle = 0;
             projTitle = document.createElement("p");
-            let j = Math.floor(Math.random()*3);
+            let j = Math.floor(Math.random()*projectArray.length);
             let textPTitle = projectArray[j].title;
             projTitle.appendChild(document.createTextNode(textPTitle));
             projImg.alt = projectArray[j].title;
