@@ -1,0 +1,3 @@
+[submodule "Livro de Receitas"] 
+  path = /home/erona/Projetos/TTTecnology.github.io/projects/recipeBook/ 
+  url = git://home/erona/repos/livro-receitas/
