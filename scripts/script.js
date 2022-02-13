@@ -79,7 +79,8 @@ function loadMainPage (){
 
          let projectArray = [new projects("Jogo da velha", "images/tikTakToe.png"),
             new projects("Relógio Digital", "images/digitalClock.png"),
-            new projects("Gerador de Senhas", "images/geraSenha.png")
+            new projects("Gerador de Senhas", "images/geraSenha.png"),
+            new projects("Livro de Receitas", "/images/recipeBook.png")
          ];
 
          asideContent[i].append(title);
@@ -135,7 +136,8 @@ function loadProjectsPage (){
    const projectArray = [ 
       new projectCell("Jogo da velha", "images/tikTakToe.png","Projeto de Jogo da Velha feito inteiramente em C, basta abrir a página e clicar em RUN", "https://onlinegdb.com/7hQFBUJ0S","https://github.com/TTTecnology/Jogo-da-Velha"),
       new projectCell("Relógio Digital", "images/digitalClock.png","Relógio Digital moderno, imita a aparência de um rádio-relógio", "projects/digitalClock/index.html","https://github.com/TTTecnology/Digital-Clock"),
-      new projectCell("Gerador de Senhas", "images/geraSenha.png","Gerador de senhas totalmente aleatório, baseado em charcodes e arrays" , "projects/geraSenha/index.html","https://github.com/TTTecnology/Password-Generator")
+      new projectCell("Gerador de Senhas", "images/geraSenha.png","Gerador de senhas totalmente aleatório, baseado em charcodes e arrays" , "projects/geraSenha/index.html","https://github.com/TTTecnology/Password-Generator"),
+      new projectCell("Livro de Receitas","/images/recipeBook.png","Livro de Receitas, projeto parte do currículo do TOP", "projects/recipeBook/index.html","https://github.com/TTTecnology/receitas")
    ]
 
    const pageArray = [];
